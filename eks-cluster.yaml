@@ -37,6 +37,6 @@ managedNodeGroups:
       withAddonPolicies:
         autoScaler: true
         externalDNS: true
-        imageBuilder: true 
+        imageBuilder: true
         appMesh: true
         albIngress: true
