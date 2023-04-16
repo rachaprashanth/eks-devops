@@ -1,0 +1,25 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: myeks-1
+  region: ap-south-1
+  
+
+managedNodeGroups:
+  - name: windows-node
+    instanceType: t2.medium
+    amiFamily: WindowsServer2019FullContainer
+    volumeSize: 30
+    minSize: 1
+    maxSize: 3
+    desiredCapacity: 1
+    containerRuntime: containerd
+
+    iam:
+      withAddonPolicies:
+        autoScaler: true
+        externalDNS: true
+        imageBuilder: true
+        appMesh: true
+        albIngress: true
