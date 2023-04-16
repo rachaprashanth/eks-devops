@@ -6,6 +6,7 @@ metadata:
   labels:
     app: windows-iis
 spec:
+  type: NodePort
   selector:
     app: windows-iis
   ports:
