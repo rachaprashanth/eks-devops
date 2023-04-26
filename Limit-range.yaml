@@ -3,7 +3,7 @@ kind: LimitRange
 
 metadata:
   name: default-cpu-memory-range
-  region: dev1
+  namespace: dev1
 
 spec:
   limit:
