@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: iis-service-loadbalancer
+spec:
+  type: LoadBalancer
+  selector:
+    app: windows-iis
+  ports:
+    - protocol: TCP
+      port: 88
+      targetPort: 80
