@@ -4,26 +4,17 @@ kind: ClusterConfig
 metadata:
   name: myeks-1
   region: ap-south-1
-
-vpc:
-  id: "vpc-0ad4d3cb3b51403a0"
-  subnets:
-    private:
-      ap-south-1a:
-          id: "subnet-03765565c1ab6315a"
-      ap-south-1b:
-          id: "subnet-06399d30b91b41202"
+  
 
 managedNodeGroups:
-  - name: EKS-Linux-NG
+  - name: windows-node
     instanceType: t2.micro
+    amiFamily: WindowsServer2019FullContainer
+    volumeSize: 30
     minSize: 1
-    maxSize: 4
-    desiredCapacity: 2
-    volumeSize: 20
+    maxSize: 3
+    desiredCapacity: 1
     privateNetworking: true
-    ssh: 
-      publicKeyName: eks-ec2
 
     iam:
       withAddonPolicies:
